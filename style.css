@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400,300);
+
+body{
+  background: #1abc9c;
+}
+
+.img-1{
+	background: #00000030 no-repeat center;
+	background-image: url("https://images.unsplash.com/photo-1529695733546-b54d501a4c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdpbmR5fGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+.img-2{
+	background: #ffffff30 no-repeat center;
+	background-image: url("https://images.unsplash.com/photo-1483691278019-cb7253bee49f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHdhdGVyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+.img-3{
+	background: #00000030 no-repeat center;
+	background-image: url("https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGVhcnRofGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=540&q=60");
+}
+
+.img-4{
+	background: #ffffff30 no-repeat center;
+	background-image: url("https://images.unsplash.com/photo-1483917841983-f83104f9ffa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGZpcmV8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+}
+
+.img-1, .img-2, .img-3, .img-4{
+	box-shadow: 5px 5px 10px #00000090; 
+	font-size: 0;
+	color: #ffffff00;
+	text-shadow: 2px 2px 2px #1ed4b000;
+	opacity: .7;
+	transform: scale(.7);
+	transition: transform .5s;	 
+	border-radius: 5px; 
+}
+
+.img-1:hover, .img-3:hover, .img-2:hover, .img-4:hover{
+	box-shadow: 2px 2px 15px #00000030;
+	transform: scale(1.3);
+	opacity: 1;
+	border-radius: 5px; 
+}
+
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0);
+	overflow: hidden;
+  background: #1abc9c;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.frame-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 310px;
+  margin-top: -345px;
+	margin-left: -175px;
+	overflow: hidden;
+	z-index: 1;
+  border-radius: 100%;
+	border: 2px dashed #ffffff70;
+	text-align: center;
+	color: #fff;
+	text-shadow: 2px 2px 2px #1ed4b0;
+}
+
+.frame-2 h2{
+	padding: 120px 50px;
+	user-select: none;
+	caret-color: none;
+}
+
+.container {
+  position: absolute;
+	width: 400px;
+	height: 100px;
+	top: 320px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+}
+
+input{
+	display: none;
+}
+
+.button{
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	margin: 5px -42.5px 0 -42.5px;
+	border: 1.5px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	padding: 3px;
+	z-index: 999999;
+	transition: all .3s ease-in-out;
+	box-sizing: border-box;
+	user-select: none;
+	caret-color: transparent;
+}
+
+.button:hover, .button:focus{
+	background: #00000020;
+	transition: background .3s ease-in-out;
+}
+
+.button:before {
+	content: ' ';
+	position: absolute;
+	top: -1px;
+	left: -1px; 
+	right: -1px;
+	bottom: -1px;
+	border-radius: 50%;
+	background: #fff;
+	transform: scale(0);
+	transition: all .5s ease-in-out;
+	z-index: -1;
+	}
+
+@for $i from 1 through 4 {
+	.input-#{$i}:checked ~ .button-#{$i} {
+		color: #1abc9c; 
+		background: none;
+		transition: all .5s ease-in-out;	
+		
+			&:before { 
+				transform: scale(1.05);
+		} 
+	}
+}
